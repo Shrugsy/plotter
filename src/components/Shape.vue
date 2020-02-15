@@ -41,6 +41,12 @@
     v-bind:y2="command[4]"
     v-bind:style="`stroke:${getRandomColor()};stroke-width:${command[5]}`"
   />
+  <polyline 
+    class="shape"
+    v-else-if="command[0] == 'PL'"
+    v-bind:points="command[1]"
+    v-bind:style="`fill:none;stroke:${getRandomColor()};stroke-width:4`"
+  />
 
 
 

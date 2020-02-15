@@ -28,7 +28,7 @@ export default {
     }
 
     .coords{
-        margin-bottom: 100px;
+        margin-top: 50px;
     }
 
     .coords::before {

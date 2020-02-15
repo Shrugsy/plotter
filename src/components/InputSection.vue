@@ -1,6 +1,6 @@
 <template>
     <div class="outer">
-        <Instructions />
+        
         <textarea
             name="input"
             id
@@ -10,6 +10,7 @@
             @input="sendInstructions"
         ></textarea>
         <div id="error"></div>
+        <Instructions />
     </div>
 </template>
 
@@ -25,7 +26,8 @@ export default {
                 { command: "C", min: 3 , max: 3, csv: false},
                 { command: "P", min: 3 , max: false, csv: true},
                 { command: "E", min: 4 , max: 4, csv: false},
-                { command: "L", min: 5, max: 5, csv: false}
+                { command: "L", min: 5, max: 5, csv: false},
+                { command: "PL", min: 2, max: false, csv: true}
             ];
             let commands = e.target.value.split("\n");
             if (commands.length == 1 && commands[0] == "") {
@@ -121,17 +123,15 @@ div.outer {
 
 div#error {
     text-align: left;
-    margin: 0 auto;
-    width: 90%;
     color: #c83939;
     font-style: italic;
     height: 1em;
+    margin-bottom: 1em;
 }
-
 
 textarea {
   background: #f4f4f4;
-  width: 90%;
+  width: 100%;
   height: 100px;
   resize: vertical;
   padding: 1em 25px;

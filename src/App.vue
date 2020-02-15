@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <Header />
-    <InputSection v-on:add-shapes="addShapes"/>
-    <SVGOutput v-bind:commands="commands" />
+    <div class="container">
+      <SVGOutput v-bind:commands="commands" />
+      <InputSection v-on:add-shapes="addShapes"/>
+    </div>    
   </div>
 </template>
 
@@ -45,5 +47,10 @@ export default {
       -moz-osx-font-smoothing: grayscale;
     text-align: center;
     background: #e0e0e0;
+  }
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
   }
 </style>

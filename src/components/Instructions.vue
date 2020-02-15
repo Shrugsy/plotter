@@ -35,6 +35,13 @@
                     >L &lt;X1 Coordinate&gt; &lt;Y1 Coordinate&gt; &lt;X2 Coordinate&gt; &lt;Y2 Coordinate&gt; &lt;Stroke Width&gt;</span
                 >
             </li>
+            <li>
+                <span class="title">Polyline:</span>
+                <span class="command"
+                    >PL &lt;X1,Y1&gt; &lt;X2,Y2&gt; &lt;X3,Y3&gt; .....
+                    &lt;Xn,Yn&gt;</span
+                >
+            </li>
         </ul>
         <div>Try some of the following examples!</div>
         <div class="command command-examples">
@@ -61,13 +68,17 @@ export default {
             },
             {
                 title: 'Command 2',
+                commands: ['pl 81,186 125,50 169,186 54,102 196,102 81,186']
+            },
+            {
+                title: 'Command 3',
                 commands: [
                     'p 195,54 163,33 123,25 87,33 53,56 33,87 25,127 33,163 55,197 87,217 127,225 163,218 197,195 125,125',
                     'c 145 64 18'
                 ]
             },
             {
-                title: 'Command 3',
+                title: 'Command 4',
                 commands: [
                     'p 75,250 80,240 60,200 82,132 43,90 25,50 65,65 117,108 130,103 173,103 187,108 260,70 280,75 275,90 228,138 235,150 265,250',
                     'p 43,90 25,50 45,57',
@@ -90,8 +101,7 @@ export default {
 <style scoped>
 div.instructions {
   text-align: left;
-  margin: 0 auto;
-  width: 90%;
+  line-height: 2em;
 }
 
 li {
