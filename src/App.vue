@@ -1,28 +1,50 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <InputSection v-on:add-shapes="addShapes"/>
+    <SVGOutput v-bind:commands="commands" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/layout/Header'
+import InputSection from './components/InputSection'
+import SVGOutput from './components/SVGOutput'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    InputSection,
+    SVGOutput
+  },
+  data() {
+    return {
+      commands: []
+    }
+  },
+  methods: {
+    addShapes(commands) {
+      console.log(commands);
+      this.commands = commands;
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background: #e0e0e0;
+  }
 </style>
