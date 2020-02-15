@@ -1,59 +1,6 @@
 <template>
     <div class="outer">
-        <div class="instructions">
-            <p>Plot some objects!</p>
-            <p>Available commands:</p>
-            <ul>
-                <li>
-                    <span class="title">Rectangle:</span>
-                    <span class="command"
-                        >R &lt;X Coordinate&gt; &lt;Y Coordinate&gt; &lt;Width&gt;
-                        &lt;Height&gt;</span
-                    >
-                </li>
-                <li>
-                    <span class="title">Circle:</span>
-                    <span class="command"
-                        >C &lt;CX Coordinate&gt; &lt;CY Coordinate&gt; &lt;Radius&gt;
-                    </span>
-                </li>
-                <li>
-                    <span class="title">Polygon:</span>
-                    <span class="command"
-                        >P &lt;X1,Y1&gt; &lt;X2,Y2&gt; &lt;X3,Y3&gt; .....
-                        &lt;Xn,Yn&gt;</span
-                    >
-                </li>
-                <li>
-                    <span class="title">Ellipse:</span>
-                    <span class="command"
-                        >E &lt;CX Coordinate&gt; &lt;CY Coordinate&gt; &lt;X Radius&gt; &lt;Y Radius&gt;</span
-                    >
-                </li>
-                <li>
-                    <span class="title">Line:</span>
-                    <span class="command"
-                        >L &lt;X1 Coordinate&gt; &lt;Y1 Coordinate&gt; &lt;X2 Coordinate&gt; &lt;Y2 Coordinate&gt; &lt;Stroke Width&gt;</span
-                    >
-                </li>
-            </ul>
-            <div>Hint: Try some of the following commands!</div>
-            <div class="command">
-                <ul>
-                    <li>
-                        p 100,10 40,198 190,78 10,78 160,198
-                    </li>
-                    <li>
-                        p 75,250 80,240 60,200 82,132 43,90 25,50 65,65 117,108 130,103 173,103 187,108 260,70 280,75 275,90 228,138 235,150 265,250
-                    </li>
-                    <li>
-                        p 43,90 25,50 45,57
-                    </li>
-                </ul>
-                
-            </div>
-        </div>
-
+        <Instructions />
         <textarea
             name="input"
             id
@@ -67,8 +14,10 @@
 </template>
 
 <script>
+import Instructions from './Instructions'
 export default {
     name: "InputSection",
+    components: {Instructions},
     methods: {
         sendInstructions(e) {
             let validCommands = [
@@ -160,6 +109,7 @@ export default {
                 return validCommand;
             }
         }
+
     }
 };
 </script>
@@ -169,45 +119,14 @@ div.outer {
   padding: 30px 0;
 }
 
-div.instructions,
 div#error {
-  text-align: left;
-  margin: 0 auto;
-  width: 90%;
-}
-
-div#error {
-  color: #c83939;
-  font-style: italic;
-  height: 1em;
-}
-
-li {
-  list-style: none;
-  padding-left: 1em;
-  line-height: 2em;
-}
-
-/* make 100% width for small width to not be too crammed */
-.title{
-    display: block;
-    width: 100%;
-}
-
-.command {
+    text-align: left;
+    margin: 0 auto;
+    width: 90%;
+    color: #c83939;
     font-style: italic;
-    font-size: 0.8em;
+    height: 1em;
 }
-
-/* when large enough, make display inline */
-@media (min-width: 576px) {
-    .title{
-        width: 90px;
-        display: inline-block;
-    }
-}
-
-
 
 
 textarea {
@@ -220,7 +139,6 @@ textarea {
   margin-top: 15px;
 }
 textarea:focus {
-  /* border: none; */
-  outline: 1px solid black;
+  outline: 1px solid #3C4856;
 }
 </style>

@@ -25,7 +25,6 @@ export default {
   },
   methods: {
     addShapes(commands) {
-      console.log(commands);
       this.commands = commands;
     }
   }

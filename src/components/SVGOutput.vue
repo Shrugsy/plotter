@@ -1,8 +1,7 @@
 <template>
     <div class="coords">
         <svg>
-            <Shape v-for="command in commands" v-bind:command="command" v-bind:key="command.idx">
-            </Shape>
+            <Shape v-for="command in commands" v-bind:command="command" v-bind:key="command.idx" />
         </svg>
     </div>
 
@@ -26,6 +25,10 @@ export default {
         height: 250px;
         border: 1px solid black;
         background: white;
+    }
+
+    .coords{
+        margin-bottom: 100px;
     }
 
     .coords::before {
